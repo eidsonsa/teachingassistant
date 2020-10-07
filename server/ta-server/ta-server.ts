@@ -19,7 +19,10 @@ app.use(allowCrossDomain);
 app.use(bodyParser.json());
 
 app.get('/alunos', function (req, res) {
-  res.send(JSON.stringify(cadastro.getAlunos()));
+  var alunos = cadastro.getAlunos();
+  var stringfy = JSON.stringify(alunos);
+    
+  res.send(stringfy);
 })
 
 app.post('/aluno', function (req: express.Request, res: express.Response) {
